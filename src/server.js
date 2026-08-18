@@ -103,23 +103,32 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start HTTP server
-const server = app.listen(config.PORT, config.HOST, () => {
-  logger.success(`=======================================================`);
-  logger.success(`  gOGig Intelligent Media Processing Pipeline Online!  `);
-  logger.success(`  API Server:  http://localhost:${config.PORT}              `);
-  logger.success(`  Dashboard:   http://localhost:${config.PORT}              `);
-  logger.success(`  Health:      http://localhost:${config.PORT}/health        `);
-  logger.success(`=======================================================`);
-});
+// Start HTTP server only if executed directly (not when imported in test suites)
+const isDirectRun = process.argv[1] && (process.argv[1].endsWith('server.js') || process.argv[1].endsWith('server'));
+
+let server = null;
+if (isDirectRun) {
+  server = app.listen(config.PORT, config.HOST, () => {
+    logger.success(`=======================================================`);
+    logger.success(`  gOGig Intelligent Media Processing Pipeline Online!  `);
+    logger.success(`  API Server:  http://localhost:${config.PORT}              `);
+    logger.success(`  Dashboard:   http://localhost:${config.PORT}              `);
+    logger.success(`  Health:      http://localhost:${config.PORT}/health        `);
+    logger.success(`=======================================================`);
+  });
+}
 
 // Graceful shutdown handling
 const shutdown = () => {
   logger.warn('Shutting down server gracefully...');
-  server.close(() => {
-    logger.info('HTTP server closed.');
+  if (server) {
+    server.close(() => {
+      logger.info('HTTP server closed.');
+      process.exit(0);
+    });
+  } else {
     process.exit(0);
-  });
+  }
 };
 
 process.on('SIGTERM', shutdown);

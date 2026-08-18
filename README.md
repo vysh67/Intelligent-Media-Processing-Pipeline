@@ -7,8 +7,6 @@
 [![Tests](https://img.shields.io/badge/tests-100%25%20passing-success.svg)]()
 [![Runtime](https://img.shields.io/badge/node-v20%2B-blue.svg)]()
 [![Docker](https://img.shields.io/badge/docker-ready-blue.svg)]()
-[![License](https://img.shields.io/badge/license-MIT-green.svg)]()
-
 ---
 
 ## Table of Contents
@@ -383,8 +381,4 @@ Here is the breakdown of the pipeline's evaluation on the 3 sample images provid
 | **Duplicate Test** | Exact re-upload of Sample 1 | `MH12NW8556` | Identical metrics | **Exact SHA-256 Hash Match** to previous Job ID | **`REJECTED`** (Score: 10/100, High Fraud Risk) |
 | **Corrupted Test** | 100% Solid Blank Canvas / Cropped Area | No plate detected | Variance: 0.0, Overexposed | **100% Uniform Area Ratio**, Entropy: 0.0 | **`REJECTED`** (Score: 0/100, Critical Corruption) |
 
----
 
-## Authors & License
-- **Candidate Submission**: gOGig Backend + AI Engineering Take-Home Assignment
-- **License**: MIT

@@ -42,19 +42,15 @@ export const tamperingAnalyzer = {
 
       const issues = [];
 
-      // 1. Dimension Validation
-      const isTooSmall =
-        metadata.width < config.THRESHOLDS.MIN_IMAGE_WIDTH ||
-        metadata.height < config.THRESHOLDS.MIN_IMAGE_HEIGHT;
-
-      if (isTooSmall) {
+      // 1. Basic decode validation
+      if (!metadata.width || !metadata.height) {
         issues.push({
           category: 'CORRUPTION',
           severity: 'CRITICAL',
-          message: `Image resolution is too low (${metadata.width}x${metadata.height}px, minimum required: ${config.THRESHOLDS.MIN_IMAGE_WIDTH}x${config.THRESHOLDS.MIN_IMAGE_HEIGHT}px)`,
+          message: 'Unable to decode image dimensions or zero-pixel image.',
           metric_name: 'resolution',
-          metric_value: `${metadata.width}x${metadata.height}`,
-          threshold: `>= ${config.THRESHOLDS.MIN_IMAGE_WIDTH}x${config.THRESHOLDS.MIN_IMAGE_HEIGHT}`
+          metric_value: '0x0',
+          threshold: '> 0x0'
         });
       }
 

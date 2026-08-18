@@ -47,10 +47,8 @@ export const config = {
     DUPLICATE_HAMMING_DISTANCE_MAX: parseInt(process.env.DUPLICATE_HAMMING_MAX || '6', 10), // <= 6 bits difference in 64-bit hash
     DUPLICATE_SIMILARITY_THRESHOLD: 0.90, // 90% or higher similarity
 
-    // Dimensions & Cropping / Corruption
-    MIN_IMAGE_WIDTH: 300,
-    MIN_IMAGE_HEIGHT: 300,
+    // Cropping / Blank Corruption
     MAX_UNIFORM_AREA_RATIO: 0.45, // >45% single uniform color / blank border indicates bad crop/corrupted capture
-    MIN_ENTROPY_THRESHOLD: 3.5,   // Very low entropy indicates blank or solid color image
+    MIN_ENTROPY_THRESHOLD: 3.5    // Very low entropy indicates blank or solid color image
   }
 };
