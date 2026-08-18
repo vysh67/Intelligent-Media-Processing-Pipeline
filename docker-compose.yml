@@ -1,0 +1,23 @@
+services:
+  media-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gogig-media-pipeline
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - QUEUE_CONCURRENCY=4
+      - BLUR_LAPLACIAN_MIN=75.0
+      - DUPLICATE_HAMMING_MAX=6
+      - STORAGE_DIR=storage
+    volumes:
+      - ./storage:/app/storage
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3

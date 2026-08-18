@@ -1,0 +1,36 @@
+{
+  "name": "gogig-media-processing-pipeline",
+  "version": "1.0.0",
+  "description": "Intelligent Media Processing Pipeline for field vehicle advertisement verification",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node tests/run_tests.js",
+    "test:samples": "node scripts/test_sample_images.js"
+  },
+  "keywords": [
+    "media-processing",
+    "async-pipeline",
+    "image-analysis",
+    "ocr",
+    "blur-detection",
+    "duplicate-detection",
+    "gogig"
+  ],
+  "author": "Engineering Candidate",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "exif-parser": "^0.1.12",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.5",
+    "sqlite3": "^5.1.7",
+    "tesseract.js": "^5.1.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {}
+}

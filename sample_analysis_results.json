@@ -1,0 +1,732 @@
+[
+  {
+    "sample": "sample_1.jpg",
+    "label": "Sample 1: Arena Animation Auto (Pune FC Road - MH12NW8556)",
+    "job_id": "941b9ef5-ae19-4e9c-89aa-4b138fcb5e95",
+    "verdict": "REJECTED",
+    "overall_score": 10,
+    "risk_level": "HIGH",
+    "execution_time_ms": 10395.88,
+    "metrics": {
+      "blur": {
+        "is_blurry": false,
+        "laplacian_variance": 968.72,
+        "sharpness_score": 100,
+        "confidence": 1,
+        "issues": []
+      },
+      "lighting": {
+        "brightness_mean": 118.2,
+        "contrast_rms": 52.15,
+        "is_low_light": false,
+        "is_overexposed": false,
+        "underexposed_ratio": 0.04,
+        "overexposed_ratio": 0.023,
+        "issues": []
+      },
+      "duplicate": {
+        "is_duplicate": true,
+        "duplicate_type": "EXACT_SHA256",
+        "duplicate_job_id": "8c827219-e0e2-435c-b5c0-e40d01f85696",
+        "duplicate_similarity_score": 1,
+        "hamming_distance": 0,
+        "dhash": "85861e1280808000",
+        "ahash": "0f1f3f7f0101070f",
+        "sha256": "8b5b60edbcdf32eb7a7d615eb64d3cd46511f2b09c21211efeef5d051b84d41f",
+        "issues": [
+          {
+            "category": "DUPLICATE",
+            "severity": "CRITICAL",
+            "message": "Exact duplicate detected: identical file payload previously uploaded in job 8c827219-e0e2-435c-b5c0-e40d01f85696 (sample_1.jpg)",
+            "metric_name": "sha256_hash",
+            "metric_value": "8b5b60edbcdf...",
+            "threshold": "exact_match"
+          }
+        ]
+      },
+      "plate": {
+        "plate_detected": true,
+        "plate_number": "HRYLRBR1NG",
+        "plate_format_valid": false,
+        "plate_state": "Haryana",
+        "plate_confidence": 0.5,
+        "ocr_raw_text": "RAH Sa, ANTS C5 LE ee TLL Yt ET IT es\nORR / Al\nPPTL ANE: © fol GRR WAN f 4 :\neG E Z|\nCR ESR NT Shea Eg >= HER\nN NE Shel Ie Ch ha)” A Gl\nRE MIE SNE SE Cel pec oo ey J He\nHAR SYR Rs SEE BB Ey ha |\nLONG NS -—\nSEW a TT of |\nF3 DG Ri =r St] Ng\nRay ake [8\nSEE )/ - \\ {Ie [35\niid yl (a Ti AR FJ) i | el\nih PUNEFCROAD am\nwx tl J | HRY. Lr br 1 Ng \\\\// \\ :\n0 IoEEO77s5000818 |=\nAS i. 7 [YEN 317 Se TS\nsta Ie 2 ARE: : —\ner pe Ta SR FATTO Klas\nEh NE ry i ler ==\n~~) GR RE) NA NNT ogo a\n>= Ae ~sy ifmadeneta, WW ©\nSill VON TR ree DEN TIVITY\nFZ TRY aT et CREATIVITY\nEa RTs Stl\n| )Vg ever\nes |i LSLARH GLOBAL ALUMNI Ere | 5\ni = (L850 RECRUITERS {mwntaTion Le wor si acon) i )\na ————— >\nwo ET JRE Ls ——\nKET) fra ” —_— | — —\nGo % 1 ol \\- { fm ) )\nSC (a so)\nRL - — J\nTEE g s ele & f\nZa | Ll 2 ; S| / )\n5 &- GN en ON ram aant\nFp - hay J\nge — — 56 DH\na EES. - Zt\n— ; J TE\n| : f 1\np EEL RE AE {75 SR PLE\npo Ee I ph RON Eee. oh SERIE AE\ni - Ry ATE. RR To SEAEOMER eas\nho IRENE Nv\noi le i Cn Red CTO FATA ENR\nSE iE TER TNT dv? TORCHES EN\noR i i sly) Gk CINE\n(i ede IEE ER EE a2 i TTI to\nsy Ly } 1 ress fi? t ER BES IE Th 2\nan rERb ihe bs ai PRY (ADS BRE ZAC SEY\n~ ATE PALI er EE BREA ARS SR ai\neo s SHEE Sarr dp a A hy AARC A\nFA EL FR AE Ape Sa Ra RA VSHERR,\nSE TR PO ER, U5 08 ES Nein",
+        "task_id_extracted": null,
+        "geotag_extracted": "PUNEFCROAD am",
+        "timestamp_extracted": null,
+        "issues": [
+          {
+            "category": "LICENSE_PLATE",
+            "severity": "WARNING",
+            "message": "Detected plate candidate (HRYLRBR1NG) does not conform to official Indian RTO standards",
+            "metric_name": "plate_format_valid",
+            "metric_value": "HRYLRBR1NG",
+            "threshold": "^[A-Z]{2}[0-9]{1,2}[A-Z]{0,3}[0-9]{4}$"
+          }
+        ]
+      },
+      "tampering": {
+        "width": 562,
+        "height": 1000,
+        "aspect_ratio": 0.562,
+        "entropy": 7.62,
+        "uniform_area_ratio": 0.07,
+        "is_corrupted_or_blank": false,
+        "is_screenshot": true,
+        "is_software_edited": false,
+        "exif_present": false,
+        "exif_data": null,
+        "issues": [
+          {
+            "category": "TAMPERING",
+            "severity": "WARNING",
+            "message": "Potential screenshot detected: aspect ratio (0.562) matches smartphone screen dimensions without camera hardware EXIF",
+            "metric_name": "aspect_ratio",
+            "metric_value": "0.562",
+            "threshold": "SCREENSHOT_HEURISTIC"
+          }
+        ]
+      }
+    },
+    "issues": [
+      {
+        "category": "DUPLICATE",
+        "severity": "CRITICAL",
+        "message": "Exact duplicate detected: identical file payload previously uploaded in job 8c827219-e0e2-435c-b5c0-e40d01f85696 (sample_1.jpg)",
+        "metric_name": "sha256_hash",
+        "metric_value": "8b5b60edbcdf...",
+        "threshold": "exact_match"
+      },
+      {
+        "category": "LICENSE_PLATE",
+        "severity": "WARNING",
+        "message": "Detected plate candidate (HRYLRBR1NG) does not conform to official Indian RTO standards",
+        "metric_name": "plate_format_valid",
+        "metric_value": "HRYLRBR1NG",
+        "threshold": "^[A-Z]{2}[0-9]{1,2}[A-Z]{0,3}[0-9]{4}$"
+      },
+      {
+        "category": "TAMPERING",
+        "severity": "WARNING",
+        "message": "Potential screenshot detected: aspect ratio (0.562) matches smartphone screen dimensions without camera hardware EXIF",
+        "metric_name": "aspect_ratio",
+        "metric_value": "0.562",
+        "threshold": "SCREENSHOT_HEURISTIC"
+      }
+    ]
+  },
+  {
+    "sample": "sample_2.jpg",
+    "label": "Sample 2: Dr. Agarwals Auto with Task ID & GPS (TN05BT5754)",
+    "job_id": "8d1a43a7-3036-413a-ad35-6a55b631c6b2",
+    "verdict": "REJECTED",
+    "overall_score": 15,
+    "risk_level": "HIGH",
+    "execution_time_ms": 7031.85,
+    "metrics": {
+      "blur": {
+        "is_blurry": false,
+        "laplacian_variance": 916.26,
+        "sharpness_score": 100,
+        "confidence": 1,
+        "issues": []
+      },
+      "lighting": {
+        "brightness_mean": 124.71,
+        "contrast_rms": 61.67,
+        "is_low_light": false,
+        "is_overexposed": false,
+        "underexposed_ratio": 0.024,
+        "overexposed_ratio": 0.06,
+        "issues": []
+      },
+      "duplicate": {
+        "is_duplicate": true,
+        "duplicate_type": "EXACT_SHA256",
+        "duplicate_job_id": "1bef616d-b381-4bab-9a41-ea8262440262",
+        "duplicate_similarity_score": 1,
+        "hamming_distance": 0,
+        "dhash": "db63a1c1e264f1dc",
+        "ahash": "fe0e038fcf4fc080",
+        "sha256": "c08b6a2b37bb2982f61c27e440f65c10cb8a285c62f82737b5a18db19cb17472",
+        "issues": [
+          {
+            "category": "DUPLICATE",
+            "severity": "CRITICAL",
+            "message": "Exact duplicate detected: identical file payload previously uploaded in job 1bef616d-b381-4bab-9a41-ea8262440262 (sample_2.jpg)",
+            "metric_name": "sha256_hash",
+            "metric_value": "c08b6a2b37bb...",
+            "threshold": "exact_match"
+          }
+        ]
+      },
+      "plate": {
+        "plate_detected": false,
+        "plate_number": null,
+        "plate_format_valid": false,
+        "plate_state": null,
+        "plate_confidence": 0,
+        "ocr_raw_text": "i Ray GS SCONCE 7\n\nBh | wu - A | J L ers fe\n\n| -_ FET | De==Ay THVSDENTAUAINIGA io IF Asia (dec 5 | (fs\nBones Ce = ame l= FL i 3a | =u\ndC ——=ve § | ember] —\nTWAT | ll ESS Co\nLa 1 = = ” 7 . CN A\nfo | 2 VU chess TR\n\nX Te a 3 \\ DDD | = 5 =:\nIR - \\ | x, 95049 28048 i A - 2\n\n[| Lom 0 Noi eeme——— ~3;\n\nNl 2 b AA) No q E 3 WN\n= AE | = =\n= |= [¥ =\n—~ 1°) C- i X =) ne \\\n\nWes Ss : i =\nNori Vi REIT rwa Hd § ;\n3) w= ) i] &\nEl . = DrAg2r A Lg\nbh ante ; A =\n2 poB58 : Ay Ve a\nal © [TG a\n< - & \\) \\ BE ¢ =) pp\nre Ee REE TS LP =) we\n- ORE 1 > = = =P 81\n. ho SO = = & & 5 hid\n3 Ba TN J < z == = Zh fi\n& i RE NG il ® = = +\nal iN LB. i 4g As ¢ SE\ncu ERCP ERNE. (Fe CR\nLe NE BR : pr El\na i . (0 3 ~ po SSE\n- ¢ i pid Zz . \\ 7) — § Ps res bE oo = X ; 5 &\n5 FS 4 oP\nae 7 is Tuesday, 17 Feb 2026 11:22 AM\nEse Perambur High Road, CMWSSB Division 70, Perambur, Ward 70, Zone 6 Thiru. Vi.\nEi RIES Ka. Nagar, Chennai Corporation, Chennai, Tamil Nadu, 600011, India\nEi ns feel Lat: 13.1059115 | Long: 80.2514811\nTASK ID: 22FUGVAG2K gllCig",
+        "task_id_extracted": "22FUGVAG2K",
+        "geotag_extracted": "Lat: 13.1059115, Long: 80.2514811",
+        "timestamp_extracted": "Tuesday, 17 Feb 2026 11:22 AM",
+        "issues": [
+          {
+            "category": "LICENSE_PLATE",
+            "severity": "WARNING",
+            "message": "No valid Indian vehicle license plate detected in image",
+            "metric_name": "plate_detected",
+            "metric_value": "FALSE",
+            "threshold": "MUST_CONTAIN_VALID_PLATE"
+          }
+        ]
+      },
+      "tampering": {
+        "width": 750,
+        "height": 1000,
+        "aspect_ratio": 0.75,
+        "entropy": 7.72,
+        "uniform_area_ratio": 0.062,
+        "is_corrupted_or_blank": false,
+        "is_screenshot": false,
+        "is_software_edited": false,
+        "exif_present": false,
+        "exif_data": null,
+        "issues": []
+      }
+    },
+    "issues": [
+      {
+        "category": "DUPLICATE",
+        "severity": "CRITICAL",
+        "message": "Exact duplicate detected: identical file payload previously uploaded in job 1bef616d-b381-4bab-9a41-ea8262440262 (sample_2.jpg)",
+        "metric_name": "sha256_hash",
+        "metric_value": "c08b6a2b37bb...",
+        "threshold": "exact_match"
+      },
+      {
+        "category": "LICENSE_PLATE",
+        "severity": "WARNING",
+        "message": "No valid Indian vehicle license plate detected in image",
+        "metric_name": "plate_detected",
+        "metric_value": "FALSE",
+        "threshold": "MUST_CONTAIN_VALID_PLATE"
+      }
+    ]
+  },
+  {
+    "sample": "sample_3.jpg",
+    "label": "Sample 3: Arena Animation Auto Campaign Duplicate (MH12KR1145)",
+    "job_id": "0a3e5161-df3b-44b0-92dc-dd54c6f34dd6",
+    "verdict": "REJECTED",
+    "overall_score": 0,
+    "risk_level": "HIGH",
+    "execution_time_ms": 3413.61,
+    "metrics": {
+      "blur": {
+        "is_blurry": false,
+        "laplacian_variance": 468.01,
+        "sharpness_score": 96,
+        "confidence": 1,
+        "issues": []
+      },
+      "lighting": {
+        "brightness_mean": 107.92,
+        "contrast_rms": 55.67,
+        "is_low_light": false,
+        "is_overexposed": false,
+        "underexposed_ratio": 0.079,
+        "overexposed_ratio": 0.019,
+        "issues": []
+      },
+      "duplicate": {
+        "is_duplicate": true,
+        "duplicate_type": "EXACT_SHA256",
+        "duplicate_job_id": "ee87f2d6-1b55-4ada-852c-b91290ca95d4",
+        "duplicate_similarity_score": 1,
+        "hamming_distance": 0,
+        "dhash": "103fb79f8afa73bc",
+        "ahash": "7ffcfefe80000000",
+        "sha256": "b952de3a42142e402a581e713bc962d9a28faeb5335bf99333efe87fd88a4f4e",
+        "issues": [
+          {
+            "category": "DUPLICATE",
+            "severity": "CRITICAL",
+            "message": "Exact duplicate detected: identical file payload previously uploaded in job ee87f2d6-1b55-4ada-852c-b91290ca95d4 (sample_3.jpg)",
+            "metric_name": "sha256_hash",
+            "metric_value": "b952de3a4214...",
+            "threshold": "exact_match"
+          }
+        ]
+      },
+      "plate": {
+        "plate_detected": false,
+        "plate_number": null,
+        "plate_format_valid": false,
+        "plate_state": null,
+        "plate_confidence": 0,
+        "ocr_raw_text": "i 5 7 an 2 ie /\nGA / 7\n= = Eee EE\n217 RY 577 -.\naf VA Abpea 3\nELA [my ;\nI'L P 1360 Yel Timer\ni FAR Yar Mh fdgran. a0\nJ Shy 90 Slt Lf V J\nWal CREATIVITG :\nLl Glog Bho =~ | gp\n0 Gig pm AL SEU OTR Sy ) 2\ngr I | Tl TIE, bY 4\nSE :\n, SC She.\naS—\nNESS if\nOs Sy\nvy SE ez A\nX; be, ARS {ui 5\n4 \\' oe any — VJ 2)\n| \\ aa =p ei a\nEk A 3\nfan py.\nyl Bes Cw",
+        "task_id_extracted": null,
+        "geotag_extracted": null,
+        "timestamp_extracted": null,
+        "issues": [
+          {
+            "category": "LICENSE_PLATE",
+            "severity": "WARNING",
+            "message": "No valid Indian vehicle license plate detected in image",
+            "metric_name": "plate_detected",
+            "metric_value": "FALSE",
+            "threshold": "MUST_CONTAIN_VALID_PLATE"
+          }
+        ]
+      },
+      "tampering": {
+        "width": 562,
+        "height": 1000,
+        "aspect_ratio": 0.562,
+        "entropy": 7.66,
+        "uniform_area_ratio": 0.059,
+        "is_corrupted_or_blank": false,
+        "is_screenshot": true,
+        "is_software_edited": false,
+        "exif_present": false,
+        "exif_data": null,
+        "issues": [
+          {
+            "category": "TAMPERING",
+            "severity": "WARNING",
+            "message": "Potential screenshot detected: aspect ratio (0.562) matches smartphone screen dimensions without camera hardware EXIF",
+            "metric_name": "aspect_ratio",
+            "metric_value": "0.562",
+            "threshold": "SCREENSHOT_HEURISTIC"
+          }
+        ]
+      }
+    },
+    "issues": [
+      {
+        "category": "DUPLICATE",
+        "severity": "CRITICAL",
+        "message": "Exact duplicate detected: identical file payload previously uploaded in job ee87f2d6-1b55-4ada-852c-b91290ca95d4 (sample_3.jpg)",
+        "metric_name": "sha256_hash",
+        "metric_value": "b952de3a4214...",
+        "threshold": "exact_match"
+      },
+      {
+        "category": "LICENSE_PLATE",
+        "severity": "WARNING",
+        "message": "No valid Indian vehicle license plate detected in image",
+        "metric_name": "plate_detected",
+        "metric_value": "FALSE",
+        "threshold": "MUST_CONTAIN_VALID_PLATE"
+      },
+      {
+        "category": "TAMPERING",
+        "severity": "WARNING",
+        "message": "Potential screenshot detected: aspect ratio (0.562) matches smartphone screen dimensions without camera hardware EXIF",
+        "metric_name": "aspect_ratio",
+        "metric_value": "0.562",
+        "threshold": "SCREENSHOT_HEURISTIC"
+      }
+    ]
+  },
+  {
+    "sample": "sample_1.jpg",
+    "label": "Sample 1 (Re-upload): Exact Cryptographic Duplicate Test",
+    "job_id": "def252e3-238e-4a50-b770-2df21a622bc8",
+    "verdict": "REJECTED",
+    "overall_score": 10,
+    "risk_level": "HIGH",
+    "execution_time_ms": 9760.56,
+    "metrics": {
+      "blur": {
+        "is_blurry": false,
+        "laplacian_variance": 968.72,
+        "sharpness_score": 100,
+        "confidence": 1,
+        "issues": []
+      },
+      "lighting": {
+        "brightness_mean": 118.2,
+        "contrast_rms": 52.15,
+        "is_low_light": false,
+        "is_overexposed": false,
+        "underexposed_ratio": 0.04,
+        "overexposed_ratio": 0.023,
+        "issues": []
+      },
+      "duplicate": {
+        "is_duplicate": true,
+        "duplicate_type": "EXACT_SHA256",
+        "duplicate_job_id": "8c827219-e0e2-435c-b5c0-e40d01f85696",
+        "duplicate_similarity_score": 1,
+        "hamming_distance": 0,
+        "dhash": "85861e1280808000",
+        "ahash": "0f1f3f7f0101070f",
+        "sha256": "8b5b60edbcdf32eb7a7d615eb64d3cd46511f2b09c21211efeef5d051b84d41f",
+        "issues": [
+          {
+            "category": "DUPLICATE",
+            "severity": "CRITICAL",
+            "message": "Exact duplicate detected: identical file payload previously uploaded in job 8c827219-e0e2-435c-b5c0-e40d01f85696 (sample_1.jpg)",
+            "metric_name": "sha256_hash",
+            "metric_value": "8b5b60edbcdf...",
+            "threshold": "exact_match"
+          }
+        ]
+      },
+      "plate": {
+        "plate_detected": true,
+        "plate_number": "HRYLRBR1NG",
+        "plate_format_valid": false,
+        "plate_state": "Haryana",
+        "plate_confidence": 0.5,
+        "ocr_raw_text": "RAH Sa, ANTS C5 LE ee TLL Yt ET IT es\nORR / Al\nPPTL ANE: © fol GRR WAN f 4 :\neG E Z|\nCR ESR NT Shea Eg >= HER\nN NE Shel Ie Ch ha)” A Gl\nRE MIE SNE SE Cel pec oo ey J He\nHAR SYR Rs SEE BB Ey ha |\nLONG NS -—\nSEW a TT of |\nF3 DG Ri =r St] Ng\nRay ake [8\nSEE )/ - \\ {Ie [35\niid yl (a Ti AR FJ) i | el\nih PUNEFCROAD am\nwx tl J | HRY. Lr br 1 Ng \\\\// \\ :\n0 IoEEO77s5000818 |=\nAS i. 7 [YEN 317 Se TS\nsta Ie 2 ARE: : —\ner pe Ta SR FATTO Klas\nEh NE ry i ler ==\n~~) GR RE) NA NNT ogo a\n>= Ae ~sy ifmadeneta, WW ©\nSill VON TR ree DEN TIVITY\nFZ TRY aT et CREATIVITY\nEa RTs Stl\n| )Vg ever\nes |i LSLARH GLOBAL ALUMNI Ere | 5\ni = (L850 RECRUITERS {mwntaTion Le wor si acon) i )\na ————— >\nwo ET JRE Ls ——\nKET) fra ” —_— | — —\nGo % 1 ol \\- { fm ) )\nSC (a so)\nRL - — J\nTEE g s ele & f\nZa | Ll 2 ; S| / )\n5 &- GN en ON ram aant\nFp - hay J\nge — — 56 DH\na EES. - Zt\n— ; J TE\n| : f 1\np EEL RE AE {75 SR PLE\npo Ee I ph RON Eee. oh SERIE AE\ni - Ry ATE. RR To SEAEOMER eas\nho IRENE Nv\noi le i Cn Red CTO FATA ENR\nSE iE TER TNT dv? TORCHES EN\noR i i sly) Gk CINE\n(i ede IEE ER EE a2 i TTI to\nsy Ly } 1 ress fi? t ER BES IE Th 2\nan rERb ihe bs ai PRY (ADS BRE ZAC SEY\n~ ATE PALI er EE BREA ARS SR ai\neo s SHEE Sarr dp a A hy AARC A\nFA EL FR AE Ape Sa Ra RA VSHERR,\nSE TR PO ER, U5 08 ES Nein",
+        "task_id_extracted": null,
+        "geotag_extracted": "PUNEFCROAD am",
+        "timestamp_extracted": null,
+        "issues": [
+          {
+            "category": "LICENSE_PLATE",
+            "severity": "WARNING",
+            "message": "Detected plate candidate (HRYLRBR1NG) does not conform to official Indian RTO standards",
+            "metric_name": "plate_format_valid",
+            "metric_value": "HRYLRBR1NG",
+            "threshold": "^[A-Z]{2}[0-9]{1,2}[A-Z]{0,3}[0-9]{4}$"
+          }
+        ]
+      },
+      "tampering": {
+        "width": 562,
+        "height": 1000,
+        "aspect_ratio": 0.562,
+        "entropy": 7.62,
+        "uniform_area_ratio": 0.07,
+        "is_corrupted_or_blank": false,
+        "is_screenshot": true,
+        "is_software_edited": false,
+        "exif_present": false,
+        "exif_data": null,
+        "issues": [
+          {
+            "category": "TAMPERING",
+            "severity": "WARNING",
+            "message": "Potential screenshot detected: aspect ratio (0.562) matches smartphone screen dimensions without camera hardware EXIF",
+            "metric_name": "aspect_ratio",
+            "metric_value": "0.562",
+            "threshold": "SCREENSHOT_HEURISTIC"
+          }
+        ]
+      }
+    },
+    "issues": [
+      {
+        "category": "DUPLICATE",
+        "severity": "CRITICAL",
+        "message": "Exact duplicate detected: identical file payload previously uploaded in job 8c827219-e0e2-435c-b5c0-e40d01f85696 (sample_1.jpg)",
+        "metric_name": "sha256_hash",
+        "metric_value": "8b5b60edbcdf...",
+        "threshold": "exact_match"
+      },
+      {
+        "category": "LICENSE_PLATE",
+        "severity": "WARNING",
+        "message": "Detected plate candidate (HRYLRBR1NG) does not conform to official Indian RTO standards",
+        "metric_name": "plate_format_valid",
+        "metric_value": "HRYLRBR1NG",
+        "threshold": "^[A-Z]{2}[0-9]{1,2}[A-Z]{0,3}[0-9]{4}$"
+      },
+      {
+        "category": "TAMPERING",
+        "severity": "WARNING",
+        "message": "Potential screenshot detected: aspect ratio (0.562) matches smartphone screen dimensions without camera hardware EXIF",
+        "metric_name": "aspect_ratio",
+        "metric_value": "0.562",
+        "threshold": "SCREENSHOT_HEURISTIC"
+      }
+    ]
+  },
+  {
+    "sample": "sample_blurry.jpg",
+    "label": "Sample 4: Synthetic Blurry Image Defect Test",
+    "job_id": "b465bc41-f0a8-4d20-90a6-b942e1532fa6",
+    "verdict": "REJECTED",
+    "overall_score": 0,
+    "risk_level": "HIGH",
+    "execution_time_ms": 657.42,
+    "metrics": {
+      "blur": {
+        "is_blurry": true,
+        "laplacian_variance": 1.15,
+        "sharpness_score": 2,
+        "confidence": 1,
+        "issues": [
+          {
+            "category": "BLUR",
+            "severity": "CRITICAL",
+            "message": "Image is blurry or out-of-focus (Laplacian Variance: 1.15, threshold: 75)",
+            "metric_name": "laplacian_variance",
+            "metric_value": "1.15",
+            "threshold": "< 75"
+          }
+        ]
+      },
+      "lighting": {
+        "brightness_mean": 117.93,
+        "contrast_rms": 41.32,
+        "is_low_light": false,
+        "is_overexposed": false,
+        "underexposed_ratio": 0,
+        "overexposed_ratio": 0.005,
+        "issues": []
+      },
+      "duplicate": {
+        "is_duplicate": true,
+        "duplicate_type": "PERCEPTUAL_NEAR_MATCH",
+        "duplicate_job_id": "8c827219-e0e2-435c-b5c0-e40d01f85696",
+        "duplicate_similarity_score": 0.969,
+        "hamming_distance": 2,
+        "dhash": "85861e0080808000",
+        "ahash": "0f1f3f7f0101070f",
+        "sha256": "32360c3833adbb0d2b25890b92f57cb6c732274f442bd54b8aaa9bd108562588",
+        "issues": [
+          {
+            "category": "DUPLICATE",
+            "severity": "CRITICAL",
+            "message": "Near-duplicate image detected (96.9% similarity, Hamming distance: 2). Matches previous job 8c827219-e0e2-435c-b5c0-e40d01f85696 (sample_1.jpg)",
+            "metric_name": "hamming_distance",
+            "metric_value": "2",
+            "threshold": "<= 6"
+          }
+        ]
+      },
+      "plate": {
+        "plate_detected": false,
+        "plate_number": null,
+        "plate_format_valid": false,
+        "plate_state": null,
+        "plate_confidence": 0,
+        "ocr_raw_text": "LY |\n'\n- E",
+        "task_id_extracted": null,
+        "geotag_extracted": null,
+        "timestamp_extracted": null,
+        "issues": [
+          {
+            "category": "LICENSE_PLATE",
+            "severity": "WARNING",
+            "message": "No valid Indian vehicle license plate detected in image",
+            "metric_name": "plate_detected",
+            "metric_value": "FALSE",
+            "threshold": "MUST_CONTAIN_VALID_PLATE"
+          }
+        ]
+      },
+      "tampering": {
+        "width": 562,
+        "height": 1000,
+        "aspect_ratio": 0.562,
+        "entropy": 7.27,
+        "uniform_area_ratio": 0.1,
+        "is_corrupted_or_blank": false,
+        "is_screenshot": true,
+        "is_software_edited": false,
+        "exif_present": false,
+        "exif_data": null,
+        "issues": [
+          {
+            "category": "TAMPERING",
+            "severity": "WARNING",
+            "message": "Potential screenshot detected: aspect ratio (0.562) matches smartphone screen dimensions without camera hardware EXIF",
+            "metric_name": "aspect_ratio",
+            "metric_value": "0.562",
+            "threshold": "SCREENSHOT_HEURISTIC"
+          }
+        ]
+      }
+    },
+    "issues": [
+      {
+        "category": "BLUR",
+        "severity": "CRITICAL",
+        "message": "Image is blurry or out-of-focus (Laplacian Variance: 1.15, threshold: 75)",
+        "metric_name": "laplacian_variance",
+        "metric_value": "1.15",
+        "threshold": "< 75"
+      },
+      {
+        "category": "DUPLICATE",
+        "severity": "CRITICAL",
+        "message": "Near-duplicate image detected (96.9% similarity, Hamming distance: 2). Matches previous job 8c827219-e0e2-435c-b5c0-e40d01f85696 (sample_1.jpg)",
+        "metric_name": "hamming_distance",
+        "metric_value": "2",
+        "threshold": "<= 6"
+      },
+      {
+        "category": "LICENSE_PLATE",
+        "severity": "WARNING",
+        "message": "No valid Indian vehicle license plate detected in image",
+        "metric_name": "plate_detected",
+        "metric_value": "FALSE",
+        "threshold": "MUST_CONTAIN_VALID_PLATE"
+      },
+      {
+        "category": "TAMPERING",
+        "severity": "WARNING",
+        "message": "Potential screenshot detected: aspect ratio (0.562) matches smartphone screen dimensions without camera hardware EXIF",
+        "metric_name": "aspect_ratio",
+        "metric_value": "0.562",
+        "threshold": "SCREENSHOT_HEURISTIC"
+      }
+    ]
+  },
+  {
+    "sample": "sample_corrupted.jpg",
+    "label": "Sample 5: Synthetic Corrupted / Blank Image Defect Test",
+    "job_id": "4156cfd8-b9b8-4e41-8e2c-37e765a4f0ac",
+    "verdict": "REJECTED",
+    "overall_score": 0,
+    "risk_level": "HIGH",
+    "execution_time_ms": 448.09,
+    "metrics": {
+      "blur": {
+        "is_blurry": true,
+        "laplacian_variance": 0,
+        "sharpness_score": 0,
+        "confidence": 1,
+        "issues": [
+          {
+            "category": "BLUR",
+            "severity": "CRITICAL",
+            "message": "Image is blurry or out-of-focus (Laplacian Variance: 0.00, threshold: 75)",
+            "metric_name": "laplacian_variance",
+            "metric_value": "0.00",
+            "threshold": "< 75"
+          }
+        ]
+      },
+      "lighting": {
+        "brightness_mean": 245,
+        "contrast_rms": 0,
+        "is_low_light": false,
+        "is_overexposed": true,
+        "underexposed_ratio": 0,
+        "overexposed_ratio": 1,
+        "issues": [
+          {
+            "category": "LIGHTING",
+            "severity": "WARNING",
+            "message": "Excessive glare or overexposure detected (Mean: 245.0/255, bright ratio: 100.0%)",
+            "metric_name": "brightness_mean",
+            "metric_value": "245.0",
+            "threshold": "< 225"
+          }
+        ]
+      },
+      "duplicate": {
+        "is_duplicate": true,
+        "duplicate_type": "PERCEPTUAL_NEAR_MATCH",
+        "duplicate_job_id": "3286360d-b673-4486-b69e-66b8486e468e",
+        "duplicate_similarity_score": 1,
+        "hamming_distance": 0,
+        "dhash": "0000000000000000",
+        "ahash": "ffffffffffffffff",
+        "sha256": "8b5c6a53752ce1feaf3c68dce2c7d82ac99d3615f11f4af493b13333ac9d88f2",
+        "issues": [
+          {
+            "category": "DUPLICATE",
+            "severity": "CRITICAL",
+            "message": "Near-duplicate image detected (100.0% similarity, Hamming distance: 0). Matches previous job 3286360d-b673-4486-b69e-66b8486e468e (test_car.jpg)",
+            "metric_name": "hamming_distance",
+            "metric_value": "0",
+            "threshold": "<= 6"
+          }
+        ]
+      },
+      "plate": {
+        "plate_detected": false,
+        "plate_number": null,
+        "plate_format_valid": false,
+        "plate_state": null,
+        "plate_confidence": 0,
+        "ocr_raw_text": "",
+        "task_id_extracted": null,
+        "geotag_extracted": null,
+        "timestamp_extracted": null,
+        "issues": [
+          {
+            "category": "LICENSE_PLATE",
+            "severity": "WARNING",
+            "message": "No valid Indian vehicle license plate detected in image",
+            "metric_name": "plate_detected",
+            "metric_value": "FALSE",
+            "threshold": "MUST_CONTAIN_VALID_PLATE"
+          }
+        ]
+      },
+      "tampering": {
+        "width": 600,
+        "height": 600,
+        "aspect_ratio": 1,
+        "entropy": 0,
+        "uniform_area_ratio": 1,
+        "is_corrupted_or_blank": true,
+        "is_screenshot": false,
+        "is_software_edited": false,
+        "exif_present": false,
+        "exif_data": null,
+        "issues": [
+          {
+            "category": "CORRUPTION",
+            "severity": "CRITICAL",
+            "message": "Corrupted or invalid upload: 100.0% of image area is empty/blank uniform canvas (Entropy: 0.00)",
+            "metric_name": "uniform_area_ratio",
+            "metric_value": "100.0%",
+            "threshold": "< 45%"
+          }
+        ]
+      }
+    },
+    "issues": [
+      {
+        "category": "BLUR",
+        "severity": "CRITICAL",
+        "message": "Image is blurry or out-of-focus (Laplacian Variance: 0.00, threshold: 75)",
+        "metric_name": "laplacian_variance",
+        "metric_value": "0.00",
+        "threshold": "< 75"
+      },
+      {
+        "category": "LIGHTING",
+        "severity": "WARNING",
+        "message": "Excessive glare or overexposure detected (Mean: 245.0/255, bright ratio: 100.0%)",
+        "metric_name": "brightness_mean",
+        "metric_value": "245.0",
+        "threshold": "< 225"
+      },
+      {
+        "category": "DUPLICATE",
+        "severity": "CRITICAL",
+        "message": "Near-duplicate image detected (100.0% similarity, Hamming distance: 0). Matches previous job 3286360d-b673-4486-b69e-66b8486e468e (test_car.jpg)",
+        "metric_name": "hamming_distance",
+        "metric_value": "0",
+        "threshold": "<= 6"
+      },
+      {
+        "category": "LICENSE_PLATE",
+        "severity": "WARNING",
+        "message": "No valid Indian vehicle license plate detected in image",
+        "metric_name": "plate_detected",
+        "metric_value": "FALSE",
+        "threshold": "MUST_CONTAIN_VALID_PLATE"
+      },
+      {
+        "category": "CORRUPTION",
+        "severity": "CRITICAL",
+        "message": "Corrupted or invalid upload: 100.0% of image area is empty/blank uniform canvas (Entropy: 0.00)",
+        "metric_name": "uniform_area_ratio",
+        "metric_value": "100.0%",
+        "threshold": "< 45%"
+      }
+    ]
+  }
+]

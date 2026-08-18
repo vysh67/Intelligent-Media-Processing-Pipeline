@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gOGig Media Processing Pipeline | AI Verification Engine</title>
+  <meta name="description" content="Asynchronous intelligent media processing and computer vision pipeline for field transit advertisement verification.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation Header -->
+    <header class="top-nav">
+      <div class="brand-section">
+        <div class="brand-badge">gOGig</div>
+        <div class="brand-titles">
+          <h1>Intelligent Media Pipeline</h1>
+          <span class="subtitle">Field Transit Ad Verification & Quality Assurance Engine</span>
+        </div>
+      </div>
+      <div class="system-status-pills">
+        <div class="status-pill online">
+          <span class="pulse-dot"></span>
+          <span class="status-label">Worker Pool: <strong>Active (Concurrency: 3)</strong></span>
+        </div>
+        <div class="status-pill latency" id="latencyPill">
+          <span>Avg Latency: <strong id="avgLatencyDisplay">-- ms</strong></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Dashboard Grid -->
+    <main class="dashboard-grid">
+      
+      <!-- Left Column: Upload & Sample Test Zone -->
+      <section class="action-card">
+        <div class="card-header">
+          <h2>1. Upload Field Image</h2>
+          <span class="card-tag">Async Pipeline</span>
+        </div>
+
+        <!-- Drag & Drop Upload Zone -->
+        <div class="upload-dropzone" id="dropzone">
+          <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" style="display: none;">
+          <div class="dropzone-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+          </div>
+          <p class="dropzone-text"><strong>Click to browse</strong> or drag & drop vehicle image</p>
+          <p class="dropzone-sub">Supports JPEG, PNG, WebP (Max 15MB)</p>
+        </div>
+
+        <!-- 1-Click Assignment Sample Images Preset -->
+        <div class="sample-presets-container">
+          <div class="section-title-row">
+            <h3>Test Assignment Samples</h3>
+            <button class="btn-secondary btn-sm" id="btnRunAllSamples">⚡ Process All 3 Samples</button>
+          </div>
+          
+          <div class="sample-cards-grid">
+            <div class="sample-mini-card" id="btnSample1" title="Test Auto Rickshaw (MH12NW8556)">
+              <div class="sample-thumb-wrap">
+                <img src="/sample_1.jpg" alt="Sample 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100%\' height=\'100%\' fill=\'%23232b38\'/><text x=\'50%\' y=\'50%\' fill=\'%23fff\' text-anchor=\'middle\'>Sample 1</text></svg>'">
+              </div>
+              <div class="sample-info">
+                <strong>Sample 1</strong>
+                <span>Arena Auto (MH12NW8556)</span>
+              </div>
+            </div>
+
+            <div class="sample-mini-card" id="btnSample2" title="Test Corrupted/Cropped Ground Image">
+              <div class="sample-thumb-wrap">
+                <img src="/sample_2.jpg" alt="Sample 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100%\' height=\'100%\' fill=\'%23232b38\'/><text x=\'50%\' y=\'50%\' fill=\'%23fff\' text-anchor=\'middle\'>Sample 2</text></svg>'">
+              </div>
+              <div class="sample-info">
+                <strong>Sample 2</strong>
+                <span class="tag-warn">Corrupted / Blank Area</span>
+              </div>
+            </div>
+
+            <div class="sample-mini-card" id="btnSample3" title="Test Auto with GPS & Task ID (TN05BT5754)">
+              <div class="sample-thumb-wrap">
+                <img src="/sample_3.jpg" alt="Sample 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect width=\'100%\' height=\'100%\' fill=\'%23232b38\'/><text x=\'50%\' y=\'50%\' fill=\'%23fff\' text-anchor=\'middle\'>Sample 3</text></svg>'">
+              </div>
+              <div class="sample-info">
+                <strong>Sample 3</strong>
+                <span class="tag-info">Task ID & Geotag Banner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Analytics Summary Box -->
+        <div class="analytics-box">
+          <div class="analytics-header">
+            <h3>Pipeline Metrics</h3>
+            <button class="btn-icon" id="btnRefreshAnalytics" title="Refresh metrics">↻</button>
+          </div>
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-value" id="statTotalJobs">0</span>
+              <span class="stat-lbl">Total Uploads</span>
+            </div>
+            <div class="stat-item pass">
+              <span class="stat-value" id="statApprovedJobs">0</span>
+              <span class="stat-lbl">Approved</span>
+            </div>
+            <div class="stat-item review">
+              <span class="stat-value" id="statFlaggedJobs">0</span>
+              <span class="stat-lbl">Flagged</span>
+            </div>
+            <div class="stat-item reject">
+              <span class="stat-value" id="statRejectedJobs">0</span>
+              <span class="stat-lbl">Rejected</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Live Processing Feed & Results Inspector -->
+      <section class="results-card">
+        <div class="card-header">
+          <h2>2. Live Processing Feed & Analysis</h2>
+          <div class="feed-filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="pending">Queue</button>
+          </div>
+        </div>
+
+        <!-- Active Jobs Feed Table / Cards -->
+        <div class="jobs-feed-list" id="jobsFeedList">
+          <div class="empty-state">
+            <p>No jobs processed yet. Upload an image or click a sample test above.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Inspection Modal / Slide-over for Deep Analysis Inspection -->
+    <div class="modal-overlay" id="inspectModal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <div class="modal-title-row">
+              <h2 id="modalJobTitle">Job Analysis Details</h2>
+              <span class="verdict-badge" id="modalVerdictBadge">APPROVED</span>
+            </div>
+            <span class="job-uuid" id="modalJobId">--</span>
+          </div>
+          <button class="btn-close" id="btnCloseModal">&times;</button>
+        </div>
+
+        <div class="modal-body-grid">
+          <!-- Image Thumbnail & Quick Metadata -->
+          <div class="modal-media-pane">
+            <div class="img-preview-container">
+              <img id="modalPreviewImg" src="" alt="Uploaded media preview">
+            </div>
+            <div class="media-meta-details" id="modalMediaMeta">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Analysis Results Tabs / Cards -->
+          <div class="modal-details-pane">
+            
+            <!-- Quality Score Gauge -->
+            <div class="score-card">
+              <div class="score-left">
+                <span class="score-number" id="modalScoreVal">95</span>
+                <span class="score-denom">/ 100</span>
+              </div>
+              <div class="score-right">
+                <strong id="modalRiskLabel">Low Risk</strong>
+                <p id="modalDecisionSummary">Passed all validation checks.</p>
+              </div>
+            </div>
+
+            <!-- 5 Checks Breakdown Grid -->
+            <div class="checks-grid">
+              
+              <!-- Check 1: Blur -->
+              <div class="check-box" id="checkBlur">
+                <div class="check-box-header">
+                  <span class="check-title">Blur Detection</span>
+                  <span class="check-status" id="blurStatus">PASS</span>
+                </div>
+                <div class="check-metrics" id="blurMetrics">
+                  <div>Sharpness Score: <strong id="valSharpness">--</strong>/100</div>
+                  <div>Laplacian Variance: <strong id="valLaplacian">--</strong></div>
+                </div>
+              </div>
+
+              <!-- Check 2: Lighting -->
+              <div class="check-box" id="checkLighting">
+                <div class="check-box-header">
+                  <span class="check-title">Lighting & Contrast</span>
+                  <span class="check-status" id="lightStatus">PASS</span>
+                </div>
+                <div class="check-metrics" id="lightMetrics">
+                  <div>Mean Brightness: <strong id="valBrightness">--</strong>/255</div>
+                  <div>RMS Contrast: <strong id="valContrast">--</strong></div>
+                </div>
+              </div>
+
+              <!-- Check 3: Duplicate -->
+              <div class="check-box" id="checkDuplicate">
+                <div class="check-box-header">
+                  <span class="check-title">Duplicate Detection</span>
+                  <span class="check-status" id="dupStatus">PASS</span>
+                </div>
+                <div class="check-metrics" id="dupMetrics">
+                  <div>Perceptual dHash: <code id="valDHash">--</code></div>
+                  <div>Duplicate Match: <strong id="valDupMatch">None (Unique)</strong></div>
+                </div>
+              </div>
+
+              <!-- Check 4: License Plate & Field Overlay -->
+              <div class="check-box" id="checkPlate">
+                <div class="check-box-header">
+                  <span class="check-title">Indian License Plate & OCR</span>
+                  <span class="check-status" id="plateStatus">PASS</span>
+                </div>
+                <div class="check-metrics" id="plateMetrics">
+                  <div>Plate: <strong class="plate-highlight" id="valPlateNum">--</strong></div>
+                  <div>RTO State: <span id="valPlateState">--</span></div>
+                  <div id="valTaskIdRow" style="display:none;">Task ID: <strong id="valTaskId">--</strong></div>
+                  <div id="valGeotagRow" style="display:none;">Geotag: <span id="valGeotag">--</span></div>
+                </div>
+              </div>
+
+              <!-- Check 5: Tampering & Corruption -->
+              <div class="check-box" id="checkTamper">
+                <div class="check-box-header">
+                  <span class="check-title">Integrity & Corruption</span>
+                  <span class="check-status" id="tamperStatus">PASS</span>
+                </div>
+                <div class="check-metrics" id="tamperMetrics">
+                  <div>Uniform Blank Area: <strong id="valUniform">--%</strong></div>
+                  <div>Image Entropy: <strong id="valEntropy">--</strong></div>
+                  <div>Screenshot Heuristic: <span id="valScreenshot">No</span></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Detected Issues List -->
+            <div class="issues-container">
+              <h3>Detected Issues & Audit Trail</h3>
+              <div class="issues-list" id="modalIssuesList">
+                <!-- Issues injected via JS -->
+              </div>
+            </div>
+
+            <!-- Raw JSON Toggle -->
+            <details class="json-inspector">
+              <summary>View Complete JSON Analysis Result</summary>
+              <pre><code id="modalRawJson"></code></pre>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
